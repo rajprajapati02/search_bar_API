@@ -1,0 +1,279 @@
+/* General Reset */
+body {
+  background-color: #e3f2fd; /* Light blue background for a refreshing feel */
+  font-family: "Arial", sans-serif; /* Clean and modern font */
+  color: #333; /* Dark text for contrast */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px; /* Set the maximum width for the container */
+  margin: 0 auto; /* Center the container */
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5rem; /* Slightly larger font */
+  color: #fff; /* White text for better contrast */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Add some space between letters */
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px; /* Padding for the background */
+  border-radius: 10px; /* Rounded corners */
+  background: linear-gradient(90deg, #0074d9, #ff4136); /* Gradient effect */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 3px solid #0074d9; /* Border around the heading */
+}
+
+header h1::after {
+  content: "⚡"; /* Add a decorative emoji/icon */
+  position: absolute;
+  right: -25px;
+  top: 5px;
+  font-size: 1.5rem;
+  color: #ff4136; /* Same color as part of the gradient */
+  animation: pulse 1.5s infinite;
+}
+
+header h1::before {
+  content: "⚡"; /* Add another decorative emoji/icon */
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  font-size: 1.5rem;
+  color: #ff4136;
+  animation: pulse 1.5s infinite;
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Search Bar */
+.pokemon-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pokemon-search input {
+  width: 300px;
+  padding: 10px;
+  border: 2px solid #0074d9; /* Blue border */
+  border-radius: 50px; /* Rounded corners */
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.pokemon-search input:focus {
+  border-color: #ff4136; /* Red border on focus */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-search button {
+  background-color: #0074d9; /* Blue background */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-search button:hover {
+  background-color: #ff4136; /* Red background on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.pokemon-search button:active {
+  transform: scale(1); /* Reset zoom effect when clicked */
+}
+
+.pokemon-search button i {
+  margin-right: 5px; /* Space between icon and text */
+  font-size: 1.2rem; /* Icon size */
+}
+
+/* Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exactly 4 cards per row */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the cards within the container */
+  list-style: none;
+  padding: 0 20px; /* Add padding on left and right */
+  margin: 0 auto;
+}
+
+/* Individual Card */
+.pokemon-card {
+  background: #b3d4fc; /* Light blue background for the card */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: auto; /* Allow the height to adjust based on content */
+}
+
+.pokemon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pokémon Image */
+.pokemon-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+}
+
+/* Pokémon Name */
+.pokemon-name {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: #0074d9;
+  text-transform: capitalize;
+}
+
+/* Pokémon Info */
+.pokemon-info {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  line-height: 1.2; /* Add spacing between lines for better readability */
+}
+
+.pokemon-info span {
+  font-weight: bold;
+  color: #0074d9;
+}
+
+/* Highlight Section */
+.pokemon-highlight {
+  margin: 10px 0;
+  background: #f1f8ff;
+  border: 1px solid #b3d4fc;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff4136;
+}
+
+/* Grid for Details */
+.grid-three-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 10px; /* Space between columns */
+  margin-top: 10px;
+}
+
+.grid-three-cols .pokemon-info {
+  background: #f8f9fa;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 0.8rem;
+  text-align: center;
+  overflow: hidden; /* Prevent overflow */
+  word-wrap: break-word; /* Wrap long text */
+}
+
+/* Loading and Error States */
+h1 {
+  text-align: center;
+}
+
+div {
+  text-align: center;
+  padding: 50px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Header Font Size */
+  header h1 {
+    font-size: 2rem;
+    padding: 10px 20px;
+  }
+
+  /* Search Bar */
+  .pokemon-search input {
+    width: 250px;
+    font-size: 0.9rem;
+  }
+
+  .pokemon-search button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Cards Grid */
+  .cards {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 cards per row on small screens */
+  }
+
+  /* Individual Card */
+  .pokemon-card {
+    padding: 15px;
+  }
+
+  /* Pokémon Info */
+  .pokemon-info {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Search Bar Input */
+  .pokemon-search input {
+    width: 200px;
+    font-size: 0.8rem;
+  }
+
+  .pokemon-search button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Cards Grid */
+  .cards {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row on mobile */
+  }
+
+  /* Individual Card */
+  .pokemon-card {
+    padding: 10px;
+  }
+}
